@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Find Hot Singles Near You</title>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9VLD02NMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H9VLD02NMS');
+  </script>
+  
   <style>
     body {
       margin: 0; padding: 0;
@@ -41,6 +51,7 @@
       text-decoration: none;
       transition: background 0.3s ease;
       font-weight: bold;
+      cursor: pointer;
     }
     .btn:hover {
       background: #e01187;
@@ -52,9 +63,23 @@
     <h1>Looking for Hot Singles Near You?</h1>
     <img src="https://pbs.twimg.com/media/ElNIqLSXUAAu8qG.jpg" alt="Sexy woman" />
     <p>Meet local singles who can't wait to chat with you!</p>
-    <a href="https://www.profitableratecpm.com/ce6ivccs53?key=4f6f1c61682bd4534e2d2f24c191fdd4" class="btn" target="_blank" rel="noopener noreferrer">See Who's Waiting</a>
+    <a href="https://www.profitableratecpm.com/ce6ivccs53?key=4f6f1c61682bd4534e2d2f24c191fdd4" 
+       class="btn" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       id="ctaButton"
+    >See Who's Waiting</a>
   </div>
+  
+  <script>
+    // Evento para medir clic en el botón con GA
+    document.getElementById('ctaButton').addEventListener('click', function() {
+      gtag('event', 'click', {
+        'event_category': 'CTA',
+        'event_label': 'See Who\'s Waiting Button'
+      });
+    });
+  </script>
 </body>
 </html>
-
 
