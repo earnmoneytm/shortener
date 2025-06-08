@@ -1,71 +1,60 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9VLD02NMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H9VLD02NMS');
-</script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Landing con Video y Anuncios Adsterra</title>
-<style>
-  body, html {
-    margin: 0; padding: 0; height: 100%; font-family: Arial, sans-serif;
-    background: #000;
-    color: #fff;
-    display: flex; flex-direction: column; align-items: center;
-  }
-  .video-container {
-    position: relative;
-    width: 100%;
-    max-width: 720px;
-    aspect-ratio: 16 / 9;
-    margin: 20px 0;
-  }
-  video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    background: #000;
-  }
-  .ad-banner {
-    width: 300px; 
-    height: 250px;
-    margin: 10px auto;
-  }
-  .social-bar {
-    width: 100%;
-    max-width: 720px;
-    margin-top: 20px;
-    text-align: center;
-  }
-  @media (max-width: 768px) {
-    .ad-banner {
-      width: 100%;
-      height: 90px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watch Now - Adult Exclusive</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
     }
-  }
-</style>
+    video {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      border: 3px solid #ff0055;
+      border-radius: 10px;
+    }
+    .cta-button {
+      padding: 15px 25px;
+      background-color: #ff0055;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      margin: 10px 0;
+      display: inline-block;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .ad-container {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+  </style>
 </head>
 <body>
+  <video src="https://files.catbox.moe/wppn9a.mp4" autoplay muted controls playsinline></video>
 
- 
+  <a class="cta-button" href="https://www.profitableratecpm.com/ce6ivccs53?key=4f6f1c61682bd4534e2d2f24c191fdd4" target="_blank">🔞 Unlock Full Video Access</a>
 
-  <div class="video-container">
-    <video autoplay muted loop playsinline controls preload="auto"
-      src="https://files.catbox.moe/wppn9a.mp4">
-      Tu navegador no soporta video HTML5.
-    </video>
-  </div>
-
-  <div class="ad-banner">
-    <!-- Banner Adsterra -->
+  <!-- Adsterra Banner -->
+  <div class="ad-container">
     <script type="text/javascript">
       atOptions = {
         'key' : 'cfe6fc7c68e3318c0e552c6c6312c209',
@@ -78,11 +67,11 @@
     <script type="text/javascript" src="//www.highperformanceformat.com/cfe6fc7c68e3318c0e552c6c6312c209/invoke.js"></script>
   </div>
 
-  <div class="social-bar">
-    <!-- Social Bar Adsterra -->
-    <script type='text/javascript' src='//pl26870440.profitableratecpm.com/de/fe/20/defe20cc99b911d434f425091e53a0e7.js'></script>
-  </div>
+  <!-- Social Bar Adsterra -->
+  <script type='text/javascript' src='//pl26870440.profitableratecpm.com/de/fe/20/defe20cc99b911d434f425091e53a0e7.js'></script>
 
+  <!-- Push Notification Script (example: Adsterra or Propeller) -->
+  <script src="https://push-sdk.com/pfe/current/tag.min.js?z=REPLACE_WITH_YOUR_ID" data-cfasync="false" async></script>
 </body>
 </html>
 
