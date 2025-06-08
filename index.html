@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Find Hot Singles Near You</title>
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9VLD02NMS"></script>
   <script>
@@ -13,10 +13,11 @@
     gtag('js', new Date());
     gtag('config', 'G-H9VLD02NMS');
   </script>
-  
+
   <style>
     body {
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       background: #000;
       color: #fff;
       font-family: 'Arial', sans-serif;
@@ -35,11 +36,47 @@
       font-size: 1.2rem;
       margin-bottom: 20px;
     }
-    img {
+    .image-wrapper {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .image-wrapper img {
       width: 100%;
       max-width: 600px;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(255, 20, 147, 0.7);
+    }
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: heartbeat 1.5s infinite;
+    }
+    .play-button::before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 25px solid white;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      margin-left: 5px;
+    }
+    @keyframes heartbeat {
+      0% { transform: translate(-50%, -50%) scale(1); }
+      14% { transform: translate(-50%, -50%) scale(1.3); }
+      28% { transform: translate(-50%, -50%) scale(1); }
+      42% { transform: translate(-50%, -50%) scale(1.3); }
+      70% { transform: translate(-50%, -50%) scale(1); }
     }
     .btn {
       display: inline-block;
@@ -61,8 +98,14 @@
 <body>
   <div class="container">
     <h1>Looking for Hot Singles Near You?</h1>
-    <img src="https://pbs.twimg.com/media/ElNIqLSXUAAu8qG.jpg" alt="Sexy woman" />
+
+    <div class="image-wrapper" id="playWrapper">
+      <img src="https://pbs.twimg.com/media/ElNIqLSXUAAu8qG.jpg" alt="Sexy woman" />
+      <div class="play-button"></div>
+    </div>
+
     <p>Meet local singles who can't wait to chat with you!</p>
+
     <a href="https://www.profitableratecpm.com/ce6ivccs53?key=4f6f1c61682bd4534e2d2f24c191fdd4" 
        class="btn" 
        target="_blank" 
@@ -70,28 +113,32 @@
        id="ctaButton"
     >See Who's Waiting</a>
   </div>
-  
-  <script>
-    document.getElementById('ctaButton').addEventListener('click', function(event) {
-      event.preventDefault(); // Detiene la acción predeterminada
 
-      var url = event.currentTarget.href;
+  <script>
+    document.getElementById('playWrapper').addEventListener('click', function () {
+      const url = document.getElementById('ctaButton').href;
 
       gtag('event', 'click', {
         'event_category': 'CTA',
-        'event_label': 'See Who\'s Waiting Button',
+        'event_label': 'Play Button Image',
         'event_callback': function () {
           window.location.href = url;
         },
         'transport_type': 'beacon'
       });
 
-      // Fallback si GA no responde en 1 segundo
-      setTimeout(function () {
+      // Fallback por si GA tarda
+      setTimeout(() => {
         window.location.href = url;
       }, 1000);
+    });
+
+    // El botón principal no dispara GA, solo redirige
+    document.getElementById('ctaButton').addEventListener('click', function () {
+      // Nada se registra, solo redirige
     });
   </script>
 </body>
 </html>
+
 
