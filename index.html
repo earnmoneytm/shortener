@@ -1,104 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Video Landing Page</title>
-  <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 900px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-    }
-
-    video {
-      width: 100%;
-      max-height: 500px;
-      border-radius: 8px;
-      background: #000;
-      outline: none;
-    }
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Landing con Video y Anuncios Adsterra</title>
+<style>
+  body, html {
+    margin: 0; padding: 0; height: 100%; font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    aspect-ratio: 16 / 9;
+    margin: 20px 0;
+  }
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #000;
+  }
+  .ad-banner {
+    width: 300px; 
+    height: 250px;
+    margin: 10px auto;
+  }
+  .social-bar {
+    width: 100%;
+    max-width: 720px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
     .ad-banner {
-      width: 300px;
-      height: 250px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(255 255 255 / 0.2);
-      background: #222;
-    }
-
-    .social-bar {
       width: 100%;
-      max-width: 900px;
-      margin-top: 15px;
+      height: 90px;
     }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .ad-banner {
-        width: 100%;
-        height: auto;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <div class="container">
+ 
 
-    <!-- Video -->
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      controls
-      preload="auto"
-      src="https://s3.filebin.net/filebin/70c7b42d83c1a0ab3701b9dea8c34d8e1f15cdd86886ef462c0de37c26ca9196/35be30114f68138ce50749eec2fa3ca57c292b94cd2b54663466a5097cc95ede?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=7pMj6hGeoKewqmMQILjm%2F20250608%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250608T205610Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&response-cache-control=max-age%3D60&response-content-disposition=inline%3B%20filename%3D%22%5BDownPorn.net%5D_720P_4000K_441419631.mp4%22&response-content-type=video%2Fmp4&X-Amz-Signature=62d2e410cb0cf27e6b0e670694e83ba1e0ef3d0eb53ac7131aa52bdfc97737e5"
-    ></video>
-
-    <!-- Banner Adsterra -->
-    <div class="ad-banner">
-      <script type="text/javascript">
-        atOptions = {
-          'key': 'cfe6fc7c68e3318c0e552c6c6312c209',
-          'format': 'iframe',
-          'height': 250,
-          'width': 300,
-          'params': {}
-        };
-      </script>
-      <script type="text/javascript" src="//www.highperformanceformat.com/cfe6fc7c68e3318c0e552c6c6312c209/invoke.js"></script>
-    </div>
-
+  <div class="video-container">
+    <video autoplay muted loop playsinline controls preload="auto"
+      src="https://files.catbox.moe/wppn9a.mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
   </div>
 
-  <!-- Social Bar Adsterra -->
+  <div class="ad-banner">
+    <!-- Banner Adsterra -->
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'cfe6fc7c68e3318c0e552c6c6312c209',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/cfe6fc7c68e3318c0e552c6c6312c209/invoke.js"></script>
+  </div>
+
   <div class="social-bar">
-    <script type="text/javascript" src="//pl26870440.profitableratecpm.com/de/fe/20/defe20cc99b911d434f425091e53a0e7.js"></script>
+    <!-- Social Bar Adsterra -->
+    <script type='text/javascript' src='//pl26870440.profitableratecpm.com/de/fe/20/defe20cc99b911d434f425091e53a0e7.js'></script>
   </div>
 
 </body>
