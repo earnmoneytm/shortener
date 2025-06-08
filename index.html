@@ -72,12 +72,24 @@
   </div>
   
   <script>
-    // Evento para medir clic en el botón con GA
-    document.getElementById('ctaButton').addEventListener('click', function() {
+    document.getElementById('ctaButton').addEventListener('click', function(event) {
+      event.preventDefault(); // Detiene la acción predeterminada
+
+      var url = event.currentTarget.href;
+
       gtag('event', 'click', {
         'event_category': 'CTA',
-        'event_label': 'See Who\'s Waiting Button'
+        'event_label': 'See Who\'s Waiting Button',
+        'event_callback': function () {
+          window.location.href = url;
+        },
+        'transport_type': 'beacon'
       });
+
+      // Fallback si GA no responde en 1 segundo
+      setTimeout(function () {
+        window.location.href = url;
+      }, 1000);
     });
   </script>
 </body>
