@@ -1,101 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Video Preview</title>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9VLD02NMS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-H9VLD02NMS');
-  </script>
-
-  <!-- Popunder Script -->
-  <script type='text/javascript' src='//pl26871093.profitableratecpm.com/4d/8b/ee/4d8bee2691dd6843a2afcd1ea03008d2.js'></script>
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .image-wrapper {
-      position: relative;
-      cursor: pointer;
-      max-width: 600px;
-      width: 100%;
-    }
-
-    .image-wrapper img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 20, 147, 0.7);
-      display: block;
-    }
-
-    .play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px;
-      height: 80px;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: heartbeat 1.5s infinite;
-    }
-
-    .play-button::before {
-      content: '';
-      display: block;
-      width: 0;
-      height: 0;
-      border-left: 25px solid white;
-      border-top: 15px solid transparent;
-      border-bottom: 15px solid transparent;
-      margin-left: 5px;
-    }
-
-    @keyframes heartbeat {
-      0% { transform: translate(-50%, -50%) scale(1); }
-      14% { transform: translate(-50%, -50%) scale(1.3); }
-      28% { transform: translate(-50%, -50%) scale(1); }
-      42% { transform: translate(-50%, -50%) scale(1.3); }
-      70% { transform: translate(-50%, -50%) scale(1); }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Complete CPA Offer to Watch Video</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+  }
+  #videoContainer {
+    position: relative;
+    width: 640px;
+    height: 360px;
+    background: black url('https://via.placeholder.com/640x360?text=Video+Thumbnail') center center no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  #playButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 0;
+  }
+  #playButton::before {
+    content: "";
+    display: inline-block;
+    margin-left: 10px;
+    border-style: solid;
+    border-width: 20px 0 20px 35px;
+    border-color: transparent transparent transparent black;
+  }
+  #message {
+    margin-top: 20px;
+    max-width: 640px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  video {
+    display: none;
+    width: 640px;
+    height: 360px;
+    border-radius: 10px;
+  }
+</style>
 </head>
 <body>
-  <div class="image-wrapper" onclick="handleClick()">
-    <img src="https://static-ca-cdn.eporner.com/gallery/Li/Uy/pEkvpKGUyLi/302502-petite-brunette-teen-takes-a-big-dick.jpg" alt="Preview" />
-    <div class="play-button"></div>
-  </div>
 
-  <script>
-    function handleClick() {
-      // Google Analytics event tracking
-      gtag('event', 'click', {
-        event_category: 'Engagement',
-        event_label: 'Play Image Click',
-        transport_type: 'beacon'
-      });
-      // El popunder ya está manejado por el script externo incluido
+<div id="videoContainer">
+  <button id="playButton" aria-label="Play video"></button>
+</div>
+<video id="video" controls>
+  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<div id="message">
+  To watch the video, please complete the CPA offer that will open when you click Play. Once you complete the offer, return here and click Play again to watch the video.
+</div>
+
+<script>
+  const playButton = document.getElementById('playButton');
+  const video = document.getElementById('video');
+  const videoContainer = document.getElementById('videoContainer');
+  const cpaUrl = "https://rockingfolders.com/show.php?l=0&u=173518&id=63057";
+
+  let offerCompleted = false;
+
+  playButton.addEventListener('click', () => {
+    if (!offerCompleted) {
+      // Open CPA offer in new tab
+      window.open(cpaUrl, '_blank');
+      alert("Please complete the offer in the new tab, then come back here and click Play again to watch the video.");
+      // Set flag to true for demonstration (In real use, you'd verify completion server-side or via callback)
+      offerCompleted = true;
+    } else {
+      // Hide thumbnail, show and play video
+      videoContainer.style.display = 'none';
+      video.style.display = 'block';
+      video.play();
     }
-  </script>
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
