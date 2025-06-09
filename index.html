@@ -5,18 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Complete CPA Offer to Watch Video</title>
 <style>
+  /* Reset básico */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
   body, html {
     height: 100%;
     margin: 0;
     background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
     font-family: Arial, sans-serif;
+    display: flex;
     flex-direction: column;
-    padding: 10px;
-    box-sizing: border-box;
+    align-items: center;
+    padding: 15px 10px;
+    text-align: center;
   }
   #videoContainer {
     position: relative;
@@ -25,41 +28,40 @@
     aspect-ratio: 16 / 9;
     background: black url('https://via.placeholder.com/640x360?text=Video+Thumbnail') center center no-repeat;
     background-size: cover;
+    border-radius: 12px;
     cursor: pointer;
-    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-shrink: 0;
   }
   #playButton {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255,255,255,0.8);
-    border-radius: 50%;
-    width: 15vw;
-    max-width: 80px;
-    height: 15vw;
-    max-height: 80px;
+    background: rgba(255, 255, 255, 0.85);
     border: none;
-    outline: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
     cursor: pointer;
-    font-size: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
   }
-  #playButton::before {
-    content: "";
-    display: inline-block;
-    margin-left: 10%;
-    border-style: solid;
-    border-width: 20% 0 20% 35%;
-    border-color: transparent transparent transparent black;
+  #playButton:hover, #playButton:focus {
+    background: rgba(255, 255, 255, 1);
+    outline: none;
+  }
+  #playIcon {
+    width: 35px;
+    height: 35px;
+    fill: black;
   }
   #message {
-    margin-top: 20px;
     max-width: 640px;
     width: 100%;
-    text-align: center;
-    font-size: clamp(14px, 2vw, 18px);
-    line-height: 1.4;
+    margin-top: 20px;
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.5;
     padding: 0 10px;
   }
   video {
@@ -67,16 +69,29 @@
     width: 100%;
     max-width: 640px;
     aspect-ratio: 16 / 9;
-    border-radius: 10px;
+    border-radius: 12px;
+    margin-top: 20px;
     flex-shrink: 0;
+  }
+
+  /* Móvil: que el body ocupe mínimo toda la altura y el contenido quede centrado verticalmente */
+  @media (max-height: 600px) {
+    body {
+      justify-content: flex-start;
+    }
   }
 </style>
 </head>
 <body>
 
 <div id="videoContainer" role="button" aria-label="Play video">
-  <button id="playButton" aria-label="Play video"></button>
+  <button id="playButton" aria-label="Play video">
+    <svg id="playIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+  </button>
 </div>
+
 <video id="video" controls>
   <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
   Your browser does not support the video tag.
@@ -96,7 +111,6 @@
 
   playButton.addEventListener('click', () => {
     if (!offerCompleted) {
-      // Open CPA offer in new tab
       window.open(cpaUrl, '_blank');
       alert("Please complete the offer in the new tab, then come back here and click Play again to watch the video.");
       offerCompleted = true;
@@ -104,12 +118,15 @@
       videoContainer.style.display = 'none';
       video.style.display = 'block';
       video.play();
+      // Para accesibilidad, poner foco en el video
+      video.focus();
     }
   });
 </script>
 
 </body>
 </html>
+
 
 
 
