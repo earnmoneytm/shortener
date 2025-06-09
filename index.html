@@ -39,6 +39,7 @@
       width: 100%;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(255, 20, 147, 0.7);
+      display: block;
     }
 
     .play-button {
@@ -78,23 +79,24 @@
 </head>
 <body>
   <div class="image-wrapper" onclick="handleClick()">
-    <img src="https://pbs.twimg.com/media/ElNIqLSXUAAu8qG.jpg" alt="Preview" />
+    <img src="https://www.bangingreviews.com/wp-content/uploads/2018/03/petite18-porn-1024x683.jpg" alt="Preview" />
     <div class="play-button"></div>
   </div>
 
   <script>
     function handleClick() {
-      // GA event
+      // Google Analytics event tracking
       gtag('event', 'click', {
         event_category: 'Engagement',
         event_label: 'Play Image Click',
         transport_type: 'beacon'
       });
-      // No redirección, solo evento y popunder ya embebido con el script
+      // El popunder ya está manejado por el script externo incluido
     }
   </script>
 </body>
 </html>
+
 
 
 
