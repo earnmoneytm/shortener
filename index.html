@@ -1,143 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Complete CPA Offer to Watch Video</title>
+<title>iPhone 16 Pro जीतें - ऑफर पूरा करें</title>
 <style>
-  /* Reset básico */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
   body, html {
-    height: 100%;
-    margin: 0;
-    background: black;
-    color: white;
-    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    font-family: 'Noto Sans Devanagari', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px 10px;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 15px;
     text-align: center;
   }
-  #videoContainer {
-    position: relative;
-    width: 100%;
-    max-width: 640px;
-    aspect-ratio: 16 / 9;
-    background: black url('https://via.placeholder.com/640x360?text=Video+Thumbnail') center center no-repeat;
-    background-size: cover;
-    border-radius: 12px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
+  h1 {
+    font-size: clamp(24px, 5vw, 36px);
+    margin-bottom: 10px;
+    color: #ffcc00;
   }
-  #playButton {
-    background: rgba(255, 255, 255, 0.85);
+  p {
+    font-size: clamp(16px, 3vw, 20px);
+    margin-bottom: 30px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #ffcc00;
+    margin-bottom: 30px;
+  }
+  button {
+    background-color: #ffcc00;
     border: none;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    border-radius: 40px;
+    padding: 18px 50px;
+    font-size: clamp(18px, 4vw, 24px);
+    font-weight: bold;
+    color: #000;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-shadow: 0 0 15px #ffcc00;
     transition: background-color 0.3s ease;
-    animation: pulse 2s infinite;
   }
-  #playButton:hover, #playButton:focus {
-    background: rgba(255, 255, 255, 1);
+  button:hover, button:focus {
+    background-color: #e6b800;
     outline: none;
   }
-  #playIcon {
-    width: 35px;
-    height: 35px;
-    fill: black;
-  }
-  #message {
-    max-width: 640px;
-    width: 100%;
-    margin-top: 20px;
-    font-size: clamp(15px, 4vw, 18px);
-    line-height: 1.5;
-    padding: 0 10px;
-  }
-  video {
-    display: none;
-    width: 100%;
-    max-width: 640px;
-    aspect-ratio: 16 / 9;
-    border-radius: 12px;
-    margin-top: 20px;
-    flex-shrink: 0;
-  }
-
-  /* Animación latido */
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-    }
-    50% {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px 10px rgba(255, 255, 255, 0.4);
-    }
-  }
-
-  /* Móvil: que el body ocupe mínimo toda la altura y el contenido quede centrado verticalmente */
-  @media (max-height: 600px) {
-    body {
-      justify-content: flex-start;
+  @media(max-width: 400px){
+    button {
+      padding: 14px 30px;
     }
   }
 </style>
 </head>
 <body>
 
-<div id="videoContainer" role="button" aria-label="Play video">
-  <button id="playButton" aria-label="Play video">
-    <svg id="playIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-      <path d="M8 5v14l11-7z"/>
-    </svg>
-  </button>
-</div>
-
-<video id="video" controls>
-  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-
-<div id="message">
-  To watch the video, please complete the CPA offer that will open when you click Play. Once you complete the offer, return here and click Play again to watch the video.
-</div>
+<h1>iPhone 16 Pro जीतें!</h1>
+<p>इस ऑफ़र को पूरा करें और iPhone 16 Pro जीतने का मौका पाएं। जल्दी करें, मौका सीमित है!</p>
+<img src="https://m.media-amazon.com/images/I/61rObEraFTL._AC_UF1000,1000_QL80_.jpg" alt="iPhone 16 Pro" />
+<button id="ctaButton">अभी ऑफ़र पूरा करें</button>
 
 <script>
-  const playButton = document.getElementById('playButton');
-  const video = document.getElementById('video');
-  const videoContainer = document.getElementById('videoContainer');
-  const cpaUrl = "https://rockingfolders.com/show.php?l=0&u=173518&id=63057";
+  const cpaLink = "https://rockingfolders.com/show.php?l=0&u=173518&id=68574";
+  const button = document.getElementById('ctaButton');
 
-  let offerCompleted = false;
-
-  playButton.addEventListener('click', () => {
-    if (!offerCompleted) {
-      window.open(cpaUrl, '_blank');
-      alert("Please complete the offer in the new tab, then come back here and click Play again to watch the video.");
-      offerCompleted = true;
-    } else {
-      videoContainer.style.display = 'none';
-      video.style.display = 'block';
-      video.play();
-      video.focus();
-    }
+  button.addEventListener('click', () => {
+    window.open(cpaLink, '_blank');
+    alert("कृपया नई टैब में ऑफ़र पूरा करें। ऑफ़र पूरा करने के बाद इस पेज पर वापस आएं।");
   });
 </script>
 
 </body>
 </html>
+
 
 
 
