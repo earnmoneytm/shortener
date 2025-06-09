@@ -15,15 +15,19 @@
     color: white;
     font-family: Arial, sans-serif;
     flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
   }
   #videoContainer {
     position: relative;
-    width: 640px;
-    height: 360px;
+    width: 100%;
+    max-width: 640px;
+    aspect-ratio: 16 / 9;
     background: black url('https://via.placeholder.com/640x360?text=Video+Thumbnail') center center no-repeat;
     background-size: cover;
     cursor: pointer;
     border-radius: 10px;
+    flex-shrink: 0;
   }
   #playButton {
     position: absolute;
@@ -32,8 +36,10 @@
     transform: translate(-50%, -50%);
     background: rgba(255,255,255,0.8);
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    width: 15vw;
+    max-width: 80px;
+    height: 15vw;
+    max-height: 80px;
     border: none;
     outline: none;
     cursor: pointer;
@@ -42,29 +48,33 @@
   #playButton::before {
     content: "";
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 10%;
     border-style: solid;
-    border-width: 20px 0 20px 35px;
+    border-width: 20% 0 20% 35%;
     border-color: transparent transparent transparent black;
   }
   #message {
     margin-top: 20px;
     max-width: 640px;
+    width: 100%;
     text-align: center;
-    font-size: 18px;
+    font-size: clamp(14px, 2vw, 18px);
     line-height: 1.4;
+    padding: 0 10px;
   }
   video {
     display: none;
-    width: 640px;
-    height: 360px;
+    width: 100%;
+    max-width: 640px;
+    aspect-ratio: 16 / 9;
     border-radius: 10px;
+    flex-shrink: 0;
   }
 </style>
 </head>
 <body>
 
-<div id="videoContainer">
+<div id="videoContainer" role="button" aria-label="Play video">
   <button id="playButton" aria-label="Play video"></button>
 </div>
 <video id="video" controls>
@@ -89,10 +99,8 @@
       // Open CPA offer in new tab
       window.open(cpaUrl, '_blank');
       alert("Please complete the offer in the new tab, then come back here and click Play again to watch the video.");
-      // Set flag to true for demonstration (In real use, you'd verify completion server-side or via callback)
       offerCompleted = true;
     } else {
-      // Hide thumbnail, show and play video
       videoContainer.style.display = 'none';
       video.style.display = 'block';
       video.play();
