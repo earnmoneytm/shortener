@@ -1,60 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Shortener</title>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    background: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: white;
-  }
-  .btn {
-    background: linear-gradient(135deg, #ff004f, #ff6a00);
-    color: white;
-    padding: 20px 50px;
-    font-size: 1.5rem;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 0 20px #ff004f;
-    animation: pulse 2s infinite;
-    transition: transform 0.2s ease;
-    margin-top: 30px;
-  }
-  .btn:hover {
-    transform: scale(1.05);
-  }
-  @keyframes pulse {
-    0% { box-shadow: 0 0 20px #ff004f; }
-    50% { box-shadow: 0 0 40px #ff6a00; }
-    100% { box-shadow: 0 0 20px #ff004f; }
-  }
-  .ad-container {
-    margin-top: 20px;
-  }
-</style>
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9VLD02NMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-H9VLD02NMS');
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Continue Your Journey</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #ff004f;
+      text-shadow: 0 0 10px #ff004f;
+    }
+    .btn {
+      background: linear-gradient(135deg, #ff004f, #ff6a00);
+      color: white;
+      padding: 15px 40px;
+      font-size: 1.25rem;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff004f;
+      margin: 20px auto;
+      display: inline-block;
+      transition: transform 0.2s ease;
+      user-select: none;
+      text-decoration: none;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    /* Container for ads */
+    .ad-container {
+      margin: 15px auto;
+      max-width: 320px;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
 
+  <h1>Click Continue to Proceed</h1>
+
+  <!-- Banner Ad -->
   <div class="ad-container">
-    <!-- Banner -->
     <script type="text/javascript">
       atOptions = {
         'key' : 'cfe6fc7c68e3318c0e552c6c6312c209',
@@ -67,30 +67,22 @@
     <script type="text/javascript" src="//www.highperformanceformat.com/cfe6fc7c68e3318c0e552c6c6312c209/invoke.js"></script>
   </div>
 
+  <!-- Native Banner Ad -->
   <div class="ad-container">
-    <!-- Popunder -->
-    <script type='text/javascript' src='//pl26871093.profitableratecpm.com/4d/8b/ee/4d8bee2691dd6843a2afcd1ea03008d2.js'></script>
+    <script async="async" data-cfasync="false" src="//pl26083326.profitableratecpm.com/83c58e3a31759dc95349030a8a84ebd5/invoke.js"></script>
+    <div id="container-83c58e3a31759dc95349030a8a84ebd5"></div>
   </div>
 
-  <button class="btn" onclick="handleClick()">Continue</button>
+  <!-- Social Bar Ad -->
+  <div class="ad-container">
+    <script type='text/javascript' src='//pl26870440.profitableratecpm.com/de/fe/20/defe20cc99b911d434f425091e53a0e7.js'></script>
+  </div>
 
-  <script>
-    function handleClick() {
-      if (typeof gtag === "function") {
-        gtag('event', 'click_continue', {
-          event_category: 'Engagement',
-          event_label: 'Continue Button - Shortener',
-          value: 1
-        });
-      }
-      setTimeout(() => {
-        window.location.href = "https://earnmoneytm.github.io/cpa/";
-      }, 200);
-    }
-  </script>
+  <a href="https://www.profitableratecpm.com/qbv6pvtmi6?key=0a561221615d55541dcb336a73e665d1" class="btn" target="_blank" rel="noopener noreferrer">Continue</a>
 
 </body>
 </html>
+
 
 
 
