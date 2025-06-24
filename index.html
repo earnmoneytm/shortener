@@ -32,7 +32,7 @@
       border-radius: 40px;
       cursor: pointer;
       box-shadow: 0 0 15px #ff004f;
-      margin: 20px auto;
+      margin: 30px auto 10px;
       display: inline-block;
       transition: transform 0.2s ease;
       user-select: none;
@@ -47,13 +47,90 @@
       max-width: 320px;
       width: 100%;
     }
+
+    /* Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      max-width: 960px;
+      margin: 0 auto 30px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 8px #ff004f;
+      object-fit: cover;
+      height: 140px;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #ff6a00;
+      z-index: 10;
+      position: relative;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 9999;
+    }
+    #lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 15px;
+      box-shadow: 0 0 30px #ff004f;
+    }
+    #lightbox:after {
+      content: "✕";
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2.5rem;
+      color: #ff004f;
+      cursor: pointer;
+      user-select: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Click Continue to Proceed</h1>
+  <h1>Explore the Gallery Before You Continue</h1>
 
-  <!-- Banner Ad -->
+  <div class="gallery">
+    <img src="https://cdni.pornpics.com/460/7/657/84858382/84858382_006_854d.jpg" alt="Image 1" />
+    <img src="https://cdni.pornpics.com/460/7/663/11265418/11265418_133_16d9.jpg" alt="Image 2" />
+    <img src="https://cdni.pornpics.com/460/7/671/63331456/63331456_084_c32f.jpg" alt="Image 3" />
+    <img src="https://cdni.pornpics.com/460/7/492/63168768/63168768_309_581a.jpg" alt="Image 4" />
+    <img src="https://cdni.pornpics.com/460/7/658/13558108/13558108_129_b89e.jpg" alt="Image 5" />
+    <img src="https://cdni.pornpics.com/460/7/535/73607602/73607602_152_36ef.jpg" alt="Image 6" />
+    <img src="https://cdni.pornpics.com/460/7/488/10585993/10585993_099_9e73.jpg" alt="Image 7" />
+    <img src="https://cdni.pornpics.com/460/7/491/65988909/65988909_039_dbcc.jpg" alt="Image 8" />
+    <img src="https://cdni.pornpics.com/460/7/574/63278522/63278522_080_8c00.jpg" alt="Image 9" />
+    <img src="https://cdni.pornpics.com/460/7/759/64711834/64711834_180_5249.jpg" alt="Image 10" />
+  </div>
+
+  <!-- Lightbox container -->
+  <div id="lightbox"></div>
+
+  <!-- Ads -->
   <div class="ad-container">
     <script type="text/javascript">
       atOptions = {
@@ -67,21 +144,38 @@
     <script type="text/javascript" src="//www.highperformanceformat.com/cfe6fc7c68e3318c0e552c6c6312c209/invoke.js"></script>
   </div>
 
-  <!-- Native Banner Ad -->
   <div class="ad-container">
     <script async="async" data-cfasync="false" src="//pl26083326.profitableratecpm.com/83c58e3a31759dc95349030a8a84ebd5/invoke.js"></script>
     <div id="container-83c58e3a31759dc95349030a8a84ebd5"></div>
   </div>
 
-  <!-- Social Bar Ad -->
   <div class="ad-container">
     <script type='text/javascript' src='//pl26870440.profitableratecpm.com/de/fe/20/defe20cc99b911d434f425091e53a0e7.js'></script>
   </div>
 
   <a href="https://www.profitableratecpm.com/qbv6pvtmi6?key=0a561221615d55541dcb336a73e665d1" class="btn" target="_blank" rel="noopener noreferrer">Continue</a>
 
+  <script>
+    const gallery = document.querySelector('.gallery');
+    const lightbox = document.getElementById('lightbox');
+
+    gallery.addEventListener('click', e => {
+      if (e.target.tagName === 'IMG') {
+        lightbox.classList.add('active');
+        lightbox.innerHTML = `<img src="${e.target.src}" alt="Expanded image" />`;
+      }
+    });
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox || e.target.tagName === 'IMG') {
+        lightbox.classList.remove('active');
+        lightbox.innerHTML = '';
+      }
+    });
+  </script>
 </body>
 </html>
+
 
 
 
